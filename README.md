@@ -11,7 +11,7 @@ Be sure to note the structure of the DOM in the usage section – it is recommen
 For some example animations, check the `/example` folder.
 
 ## Demo
-![alt text](https://s4.gifyu.com/images/use-sticky-header-demo.gif "Demo")
+![Demo](demo.gif)
 
 ## Todo
 - [ ] Add tests
