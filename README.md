@@ -4,6 +4,16 @@
 
 [![NPM](https://img.shields.io/npm/v/react-use-sticky-header.svg)](https://www.npmjs.com/package/react-use-sticky-header) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+This hook will help you to create a sticky header that appears as "sticky" when the user begins to scroll back up after they have passed the threshold. Currently, this is designed to work with a single header at the top of the page – however an offset can be passed to account for an element or extra space above the header.
+
+Be sure to note the structure of the DOM in the usage section – it is recommended that you use a container inside of your header element. That way, you can prevent a content jump when the header switches to "sticky".
+
+For some example animations, check the `/example` folder.
+
+## Todo
+[ ] Add tests
+[ ] Allow sticky header at any Y position
+
 ## Install
 
 ```bash
