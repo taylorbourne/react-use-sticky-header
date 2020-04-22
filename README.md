@@ -48,6 +48,13 @@ export default App;
 
 ```
 
+## Usage
+Running the example
+
+```bash
+cd example && yarn && yarn start
+```
+
 ## License
 
 MIT © [taylorbourne](https://github.com/taylorbourne)
