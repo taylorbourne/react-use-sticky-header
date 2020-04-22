@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 80px;
+  background: #F3F7F0;
+  position: relative;
+}
+
+.header--detached .header__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  z-index: 6;
+}
+
+.header--sticky .header__container {
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.10);
+  transform: translateY(0);
+  transition: box-shadow 0.25s ease 0.25s, transform 0.25s ease;
+}
+
+.header--unsticky .header__container {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.header__container {
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  background: #F3F7F0;
+  display: flex;
+  transition: box-shadow 0s ease, transform 0s ease;
+}
+
+.welcome {
+  height: 50px;
+}
+
+.welcome p {
+  margin: 0;
+}
