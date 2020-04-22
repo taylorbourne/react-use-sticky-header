@@ -11,8 +11,8 @@ Be sure to note the structure of the DOM in the usage section – it is recommen
 For some example animations, check the `/example` folder.
 
 ## Todo
-[ ] Add tests
-[ ] Allow sticky header at any Y position
+- [ ] Add tests
+- [ ] Allow sticky header at any Y position
 
 ## Install
 
