@@ -48,8 +48,7 @@ export default App;
 
 ```
 
-## Usage
-Running the example
+## Running the example
 
 ```bash
 cd example && yarn && yarn start
