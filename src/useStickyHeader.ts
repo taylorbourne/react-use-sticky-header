@@ -1,4 +1,3 @@
-import partial from "lodash/partial";
 import { useCallback, useRef } from "react";
 
 function useStickyHeader(
@@ -67,12 +66,7 @@ function useStickyHeader(
     if (ref.current) {
       window.removeEventListener(
         "scroll",
-        partial(
-          handleScroll,
-          headerEl,
-          headerHeight.current,
-          SCROLL_THRESHOLD.current
-        ),
+        handleScroll.bind(null, headerEl, headerHeight.current, SCROLL_THRESHOLD.current),       
         false
       );
     }
@@ -90,13 +84,7 @@ function useStickyHeader(
       }
       window.addEventListener(
         "scroll",
-        partial(
-          handleScroll,
-          headerEl,
-          headerHeight.current,
-          SCROLL_THRESHOLD.current
-        ),
-        false
+        handleScroll.bind(null, headerEl, headerHeight.current, SCROLL_THRESHOLD.current), false
       );
     }
     ref.current = headerEl;
