@@ -46,9 +46,11 @@ function useStickyHeader(
       windowYOffset < previousScrollPosition.current &&
       windowYOffset <= THRESHOLD - headerHeight
     ) {
-      headerClasslist.remove(classNames.headerDetached);
-      headerClasslist.remove(classNames.headerSticky);
-      headerClasslist.add(classNames.headerAttached);
+      requestAnimationFrame(() => {
+        headerClasslist.remove(classNames.headerDetached);
+        headerClasslist.remove(classNames.headerSticky);
+        headerClasslist.add(classNames.headerAttached);
+      });
     } else if (
       windowYOffset < previousScrollPosition.current &&
       windowYOffset > THRESHOLD
@@ -62,8 +64,10 @@ function useStickyHeader(
       windowYOffset > previousScrollPosition.current &&
       headerClasslist.contains(classNames.headerSticky)
     ) {
-      headerClasslist.add(classNames.headerUnsticky);
-      headerClasslist.remove(classNames.headerSticky);
+      requestAnimationFrame(() => {
+        headerClasslist.add(classNames.headerUnsticky);
+        headerClasslist.remove(classNames.headerSticky);
+      });
     }
     previousScrollPosition.current = window.pageYOffset;
   };
