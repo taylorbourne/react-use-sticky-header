@@ -1,6 +1,6 @@
 import { useCallback, useRef } from "react";
 
-export interface ClassNames {
+interface ClassNames {
   headerAttached: string;
   headerDetached: string;
   headerSticky: string;
