@@ -24,7 +24,7 @@ function useStickyHeader(
   const previousScrollPosition = useRef<number>(0);
   const SCROLL_THRESHOLD = useRef<number>(0);
 
-  const classNames: ClassNames = { ...defaultClassNames, ...customClasses } 
+  const classNames: ClassNames = Object.assign({}, defaultClassNames, customClasses)
 
   const handleScroll = (
     headerEl: HTMLElement,
