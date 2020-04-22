@@ -21,9 +21,7 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {
-    "@types/lodash": "^4.14.150"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.9.0"
   },
