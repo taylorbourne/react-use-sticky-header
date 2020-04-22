@@ -3,18 +3,21 @@ html, body {
   padding: 0;
 }
 
+.content {
+  padding: 0 20px;
+}
+
 .header {
   height: 80px;
   background: #F3F7F0;
   position: relative;
 }
 
-.header--detached .header__container {
+.header--detached-custom .header__container {
   position: fixed;
   top: 0;
   left: 0;
   transform: translateY(-100%);
-  z-index: 6;
 }
 
 .header--sticky .header__container {
@@ -33,11 +36,20 @@ html, body {
   align-items: center;
   background: #F3F7F0;
   display: flex;
+  justify-content: center;  
   transition: box-shadow 0s ease, transform 0s ease;
+}
+
+.header__container p {
+  margin: 0;
 }
 
 .welcome {
   height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 .welcome p {

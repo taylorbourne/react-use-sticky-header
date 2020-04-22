@@ -1,24 +1,30 @@
 import { useCallback, useRef } from "react";
 
+export interface ClassNames {
+  headerAttached: string;
+  headerDetached: string;
+  headerSticky: string;
+  headerUnsticky: string;
+}
+
+const defaultClassNames: ClassNames = {
+  headerAttached: "header--attached",
+  headerDetached: "header--detached",
+  headerSticky: "header--sticky",
+  headerUnsticky: "header--unsticky",
+}
+
 function useStickyHeader(
   offsetY: number = 0,
-  classNames: {
-    headerAttached: string;
-    headerDetached: string;
-    headerSticky: string;
-    headerUnsticky: string;
-  } = {
-    headerAttached: "header--attached",
-    headerDetached: "header--detached",
-    headerSticky: "header--sticky",
-    headerUnsticky: "header--unsticky",
-  }
+  customClasses = {}
 ) {
   const ref = useRef<HTMLElement | null>(null);
   const currentScrollPosition = useRef<number>(0);
   const headerHeight = useRef<number>(0);
   const previousScrollPosition = useRef<number>(0);
   const SCROLL_THRESHOLD = useRef<number>(0);
+
+  const classNames: ClassNames = { ...defaultClassNames, ...customClasses } 
 
   const handleScroll = (
     headerEl: HTMLElement,

@@ -28,7 +28,7 @@ yarn add react-use-sticky-header
 ```tsx
 useStickyHeader(
   offsetY:number, 
-  classNames: {
+  customClasses: {
     headerAttached: string;
     headerDetached: string;
     headerSticky: string;

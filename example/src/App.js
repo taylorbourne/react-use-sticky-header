@@ -3,14 +3,14 @@ import React from "react";
 import { useStickyHeader } from "react-use-sticky-header";
 
 const App = () => {
-  const [headerRef] = useStickyHeader(50);
+  const [setHeaderRef] = useStickyHeader(50, { headerDetached: 'header--detached-custom' });
   return (
     <div>
       <div className="welcome">
         <p>Welcome to the <em>use-sticky-header</em> demo</p>
       </div>
-      <div className="header" ref={headerRef}>
-        <div className="header__container"/>
+      <div className="header" ref={setHeaderRef}>
+        <div className="header__container"><p>Sticky Header</p></div>
       </div>
       <div className="content">
         <p>
