@@ -65,7 +65,6 @@ function useStickyHeader(
 
   const setHeaderRef = useCallback((headerEl: HTMLElement) => {
     if (ref.current) {
-      // Make sure to cleanup any events/references added to the last instance
       window.removeEventListener(
         "scroll",
         partial(
@@ -79,8 +78,6 @@ function useStickyHeader(
     }
 
     if (headerEl) {
-      // Check if a node is actually passed. Otherwise node would be null.
-      // You can now do what you need to, addEventListeners, measure, etc.
       headerHeight.current = headerEl.offsetHeight;
       currentScrollPosition.current = window.pageYOffset;
       SCROLL_THRESHOLD.current = headerHeight.current + offsetY;
@@ -102,8 +99,6 @@ function useStickyHeader(
         false
       );
     }
-
-    // Save a reference to the headerEl
     ref.current = headerEl;
   }, []);
 
