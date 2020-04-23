@@ -1,6 +1,6 @@
 {
   "name": "react-use-sticky-header",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Easily create a sticky header for your react application",
   "author": "taylorbourne",
   "license": "MIT",
