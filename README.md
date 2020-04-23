@@ -10,26 +10,6 @@ Be sure to note the structure of the DOM in the usage section – it is recommen
 
 For some example animations, check the `/example` folder.
 
-## CSS Classes
-
-This hook makes no opinions about how you handle the actual display of your sticky header, the CSS is completely up to you. THe hook simply adds and removes all of the necesary classes. Though again, if you get stuck there is a solid example in `/example`.
-
-### headerAttached
-_default class name_: `header--attached`
-Applied when the header element is in its original position
-
-### headerDetached
-_default class name_: `header--detached`
-Applied when the the header element (plus any added Y offset) has been scrolled out of view. Note that if your sticky header is _always_ sticky, you'll want to utilize this class for that effect.
-
-### headerSticky
-_default class name_: `header--sticky`
-Applied while the header is sticky. Note that this class is removed while the user is scrolling down, and then reapplied when they start to scroll back up. Once the original header element location is completely in the viewport, this class is removed.
-
-### headerUnsticky
-_default class name_: `header--unsticky`
-Applied when the header goes from sticky to hidden when the user scrolls up. If you're not hiding your header when the user scrolls up this class is likely unnecessary.
-
 ## Demo
 ![Demo](demo.gif)
 
@@ -82,6 +62,30 @@ const App = () => {
 export default App;
 
 ```
+
+## CSS Classes
+
+This hook makes no opinions about how you handle the actual display of your sticky header, the CSS is completely up to you. THe hook simply adds and removes all of the necesary classes. Though again, if you get stuck there is a solid example in `/example`.
+
+### headerAttached
+_default class name_: `header--attached`  
+  
+Applied when the header element is in its original position
+
+### headerDetached
+_default class name_: `header--detached`  
+  
+Applied when the the header element (plus any added Y offset) has been scrolled out of view. Note that if your sticky header is _always_ sticky, you'll want to utilize this class for that effect.
+
+### headerSticky
+_default class name_: `header--sticky`  
+  
+Applied while the header is sticky. Note that this class is removed while the user is scrolling down, and then reapplied when they start to scroll back up. Once the original header element location is completely in the viewport, this class is removed.
+
+### headerUnsticky
+_default class name_: `header--unsticky`  
+  
+Applied when the header goes from sticky to hidden when the user scrolls up. If you're not hiding your header when the user scrolls up this class is likely unnecessary.
 
 ## Running the example
 
