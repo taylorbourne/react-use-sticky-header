@@ -4,11 +4,27 @@
 
 [![NPM](https://img.shields.io/npm/v/react-use-sticky-header.svg)](https://www.npmjs.com/package/react-use-sticky-header) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-This hook will help you to create a sticky header that appears as "sticky" when the user begins to scroll back up after they have passed the threshold. Currently, this is designed to work with a single header at the top of the page – however an offset can be passed to account for an element or extra space above the header.
+This hook will help you to create a sticky header by providing all the necessary classes. It was originally developed so that a header could be created that would slide into view when the user scrolls up (after scrolling past a threshold), however with the provided classes you should be able to make any top-positioned style of sticky header desired!
 
 Be sure to note the structure of the DOM in the usage section – it is recommended that you use a container inside of your header element. That way, you can prevent a content jump when the header switches to "sticky".
 
 For some example animations, check the `/example` folder.
+
+## CSS Classes
+
+This hook makes no opinions about how you handle the actual display of your sticky header, the CSS is completely up to you. THe hook simply adds and removes all of the necesary classes. Though again, if you get stuck there is a solid example in `/example`.
+
+### headerAttached
+Applied when the header element is in its original position
+
+### headerDetached
+Applied when the the header element (plus any added Y offset) has been scrolled out of view. Note that if your sticky header is _always_ sticky, you'll want to utilize this class for that effect.
+
+### headerSticky
+Applied while the header is sticky. Note that this class is removed while the user is scrolling down, and then reapplied when they start to scroll back up. Once the original header element location is completely in the viewport, this class is removed.
+
+### headerUnsticky
+Applied when the header goes from sticky to hidden when the user scrolls up. If you're not hiding your header when the user scrolls up this class is likely unnecessary.
 
 ## Demo
 ![Demo](demo.gif)
@@ -47,10 +63,12 @@ useStickyHeader(
 import { useStickyHeader } from "react-use-sticky-header";
 
 const App = () => {
-  const [headerRef] = useStickyHeader(50);
+  const [setHeaderRef] = useStickyHeader(50, { 
+    headerDetached: 'header--detached-custom' 
+  });
   return (
     <div>
-      <div className="header" ref={headerRef}>
+      <div className="header" ref={setHeaderRef}>
         <div className="header__container"/>
       </div>
       <div className="content"/>
